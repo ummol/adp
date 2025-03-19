@@ -1,0 +1,98 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #dedede;
+    padding: 5px;
+    margin: 15px;
+    font-size: 25px;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.95em;
+}
+
+p {
+    text-align: justify;
+    font-size: 1.1em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 10px;
+}
+
+figure {
+    text-align: center;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid blue;
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+figcaption {
+    font-weight: bold;
+}
+
+
+@media (min-width: 772px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    figure {
+        border-radius: 50%;
+    }
+    figure:last-child {
+        grid-column: span 2;
+    }
+}
+
+
+@media (min-width: 992px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    figure {
+        border-radius: 0;
+    }
+    figure:nth-child(3n) {
+        grid-column: span 2;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+    figure {
+        background: #333;
+        border-color: black;
+    }
+    figcaption {
+        color: #ffd700;
+    }
+}
